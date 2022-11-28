@@ -31,9 +31,10 @@ LinkedListNode<int> *reverseLinkedList(LinkedListNode<int> *head)
    
         while(curr != NULL){
         forward = curr->next;
+        //here forward is used as we can see curr is updating in next step so we have to use forward instead of this line (curr-next)
         curr->next = prev;
         prev = curr;
-        curr = curr->next;
+        curr = forward;
         
     }
     return prev;   
